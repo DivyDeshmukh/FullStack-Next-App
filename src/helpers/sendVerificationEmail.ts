@@ -7,9 +7,11 @@ export async function sendVerifcationEmail(
   username: string,
   verifyCode: string
 ): Promise<ApiResponse> {
+  console.log("Email: ", email);
+
   try {
     await resend.emails.send({
-      from: "you@example.com",
+      from: "onboarding@resend.dev",
       to: email,
       subject: "fullstack-next Verification Code",
       react: VerificationEmail({
